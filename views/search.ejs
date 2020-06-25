@@ -1,0 +1,43 @@
+
+<style>
+body
+	{
+		background:url("https://images.pexels.com/photos/2398354/pexels-photo-2398354.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+	}
+div
+{
+border:3px solid grey;text-align:center;width:50%;
+	margin:100px 25%;
+	background:#42e9f5;
+}
+ 
+@media(max-width:700px)
+{
+div
+{
+width:100%;
+	margin:100px 0;
+}
+}
+p
+	{
+		font-family:"Indie Flower";color:#9942f5; font-size:1.5rem;
+	}
+</style>
+<%-include("partials/header.ejs")%>
+<div>
+	<h1>
+	<i class="fas fa-video"></i>  Welcome To Movie Buff
+</h1>
+	<p>
+		The one stop destination for all binge fanatics
+	</p>
+ <form action = "/results" method = "get">
+	<input type="text" placeholder="Search any movie/tv series" name="search">
+	<button >
+		Submit
+	</button>
+	</form>
+	
+</div>
+<%-include("partials/footer.ejs")%>

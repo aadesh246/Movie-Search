@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://kit.fontawesome.com/20192c7fbc.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<title>Movie Buff</title>
+		<style>
+			a
+			{
+				vertical-align:bottom;
+			}
+		.card-img-top
+			{height:300px;width:300px;}
+			.card
+			{
+				background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%); 
+				
+			}
+			body
+			{
+				background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+			}
+			h1
+			{
+				border:3px solid grey;
+				background:black;color:white;
+				font-weight:normal;
+				font-family:"Simpifica";
+				text-align:center;
+			}
+			
+		</style>
+		
+		
+	</head>
+	<body>
+		<h1>
+			Here are your results.... <a class="back text-align-right" href="/">Go Back</a>
+		</h1>
+<div class = "container">
+	<div class = "row">
+		<% data["Search"].forEach(function(movie){%>
+	 <div class = "col-12 col-md-6 col-lg-4 card mb-3">
+		 <img class="card-img-top" src="<%=movie.Poster%>" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><%=movie.Title%>(<%=movie.Year%>)</h5>
+    <p class="card-text"><%for(var i =0;i<movies.length;i++)
+		{ if(movie.imdbID==movies[i].imdbID){%>
+		<strong>Actors:-<%=movies[i]["Actors"]%></strong><br><%=movies[i]["Plot"]%><%}}%>
+			</p>
+	  <% var web = "https://www.1337x.am/search/"+movie.Title+"/1/";%>
+    <a href="<%=web%>" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
+  	</div>
+	</div>
+	
+		
+	<%})%>
+</div>
+		</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
